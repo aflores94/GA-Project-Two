@@ -1,8 +1,9 @@
 //jshint esversion:6
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/usersDB", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/projectTwoDB", { useNewUrlParser: true });
 
+//user data
 const userSchema = new mongoose.Schema({
         username: String,
         podcasts: [podcastSchema],
@@ -17,8 +18,7 @@ let user1 = new user({
     bookshelves: ["Pod Save the World"]
 });
 
-mongoose.connect("mongodb://localhost:27017/podcastsDB", { useNewUrlParser: true });
-
+//podcast data
 const podcastSchema = new mongoose.Schema({
         website: url(),
         spotifyLink: url(),
@@ -42,6 +42,7 @@ let podSaveAmerica = new podcast({
     bookshelf: bookshelfSchema
 });
 
+//podcast bookshelf data 
 const bookshelfSchema = new mongoose.Schema({
     book: {
         title: String, 
@@ -52,6 +53,4 @@ const bookshelfSchema = new mongoose.Schema({
     }
 });
 
-const masterBookshelfSchema = new mongoose.Schema({
-    books: [bookshelfSchema]
-});
+const Bookshelf = mongoose.model('bookshelf', bookshelfSchema);
