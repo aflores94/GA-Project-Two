@@ -3,16 +3,11 @@
 const express = require('express');
 const router = express.Router();
 
-const app = express();
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('home');
 });
-
-app.listen(5000, function(){
-  console.log("Listening on port 5000");
-}); 
 
 module.exports = router;
