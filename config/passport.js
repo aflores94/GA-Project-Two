@@ -16,7 +16,7 @@ passport.use(new GoogleStrategy({
             if (err) return cb(err);
             if (user) {
                 // returning user
-                cb(null, student);
+                cb(null, user);
             } else {
                 // new user
                 const newUser = new User({
@@ -33,12 +33,12 @@ passport.use(new GoogleStrategy({
     }
 ));
 
- passport.serializeUser(function (student, done) {
-     done(null, student.id);
+ passport.serializeUser(function (user, done) {
+     done(null, user.id);
  });
 
  passport.deserializeUser(function (id, done) {
-     Student.findById(id, function (err, student) {
-         done(err, student);
+     User.findById(id, function (err, user) {
+         done(err, user);
      });
  });
