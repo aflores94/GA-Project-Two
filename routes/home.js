@@ -1,10 +1,9 @@
 //jshint esversion:6
 
 const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const passport = require('passport');
 const homeCtrl = require('../controllers/home');
-
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,9 +12,8 @@ router.get('/', function(req, res, next) {
 
  // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
-  'google', {
-    scope: ['profile', 'email']
-  }
+  'google', 
+  { scope: ['profile', 'email'] }
 ));
 
  // Google OAuth callback route
