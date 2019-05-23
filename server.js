@@ -5,15 +5,25 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const mongoose = require('mongoose');
-const ejs = require('ejs');
+const session = require('express-session');
+const passport = require('passport');
 
+//requires routes 
 const homeRouter = require('./routes/home');
 const loginRouter = require('./routes/login');
 const userRouter = require('./routes/user');
 const bookshelfRouter = require('./routes/bookshelf');
 
 const app = express();
+
+require('dotenv').config();
+
+//connect to the mongoDB with mongoose 
+require('./config/database');
+
+//configure passport for our app 
+require('./config/passport');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +33,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//session middleware for passport
+app.use(session({
+  secret: 'podcastsRock',
+  resave: false, 
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);

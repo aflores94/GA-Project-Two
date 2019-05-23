@@ -1,6 +1,7 @@
 //jshint esversion:6
 
 const mongoose = require('mongoose');
+const bookshelfSchema = require('./bookshelf');
 
 mongoose.connect("mongodb://localhost:27017/projectTwoDB", {
     useNewUrlParser: true
@@ -8,24 +9,26 @@ mongoose.connect("mongodb://localhost:27017/projectTwoDB", {
 
 //podcast data
 const podcastSchema = new mongoose.Schema({
-    website: url(),
-    spotifyLink: url(),
-    appleMusicLink: url(),
+    website: String,
+    spotifyLink: String,
+    appleMusicLink: String,
     bookshelf: bookshelfSchema
 });
 
 const Podcast = mongoose.model('podcast', podcastSchema);
 
-let podSaveWorld = new podcast({
-    website: url(),
-    spotifyLink: url(),
-    appleMusicLink: url(),
-    bookshelf: bookshelfSchema
-});
+// let podSaveWorld = new podcast({
+//     website: String,
+//     spotifyLink: String,
+//     appleMusicLink: String,
+//     bookshelf: bookshelfSchema
+// });
 
-let podSaveAmerica = new podcast({
-    website: url(),
-    spotifyLink: url(),
-    appleMusicLink: url(),
-    bookshelf: bookshelfSchema
-});
+// let podSaveAmerica = new podcast({
+//     website: String,
+//     spotifyLink: String,
+//     appleMusicLink: String,
+//     bookshelf: bookshelfSchema
+// });
+
+module.exports = podcastSchema;

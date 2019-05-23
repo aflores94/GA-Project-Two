@@ -12,10 +12,12 @@ const bookshelfSchema = new mongoose.Schema({
     book: {
         title: String,
         author: String,
-        image: url(),
+        image: String,
         notes: String,
         read: Boolean,
     }
 });
 
 const Bookshelf = mongoose.model('bookshelf', bookshelfSchema);
+
+module.exports = bookshelfSchema;
