@@ -6,8 +6,9 @@ const passport = require('passport');
 const homeCtrl = require('../controllers/home');
 
 
+
 /* GET home page. */
-router.get('/', homeCtrl.home);
+router.get('/', homeCtrl);
 
  // Google OAuth login route
 router.get('/auth/google', passport.authenticate(

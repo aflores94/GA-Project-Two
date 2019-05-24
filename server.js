@@ -10,7 +10,7 @@ const passport = require('passport');
 
 //requires routes 
 const homeRouter = require('./routes/home');
-const userRouter = require('./routes/user');
+const userRouter = require('./routes/users');
 const bookshelfRouter = require('./routes/bookshelf');
 
 const app = express();
@@ -45,7 +45,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
-app.use('/users', userRouter);
+app.use('/', userRouter);
 app.use('/bookshelf', bookshelfRouter);
 
 // catch 404 and forward to error handler
