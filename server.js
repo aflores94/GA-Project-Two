@@ -10,7 +10,6 @@ const passport = require('passport');
 
 //requires routes 
 const homeRouter = require('./routes/home');
-const loginRouter = require('./routes/login');
 const userRouter = require('./routes/user');
 const bookshelfRouter = require('./routes/bookshelf');
 
@@ -46,7 +45,6 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
-app.use('/login', loginRouter);
 app.use('/users', userRouter);
 app.use('/bookshelf', bookshelfRouter);
 

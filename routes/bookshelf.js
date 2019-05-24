@@ -9,15 +9,29 @@ const bookshelvesCtrl = require('../controllers/bookshelves');
 
 router.get("/user/:userId/podcast-bookshelfs/:bookshelfId", function (req, res) {
     //go to podcast bookshelf
+    //  function isLoggedIn(req, res, next) {
+    //      if (req.isAuthenticated()) return next();
+    //      res.redirect('/auth/google');
+    //  }
     res.render('bookshelf');
 });
 
 router.post("/user/:userId/podcast-bookshelf/:bookshelfId", function (req, res) {
     //add book to bookshelf or update existing book
+    //  function isLoggedIn(req, res, next) {
+    //      if (req.isAuthenticated()) return next();
+    //      res.redirect('/auth/google');
+    //  }
 });
 
 router.delete("/user/:userId/podcast-bookshelf/:bookshelfId", function (req, res) {
     //remove book from bookshelf 
+    //  function isLoggedIn(req, res, next) {
+    //      if (req.isAuthenticated()) return next();
+    //      res.redirect('/auth/google');
+    //  }
 });
+
+
 
 module.exports = router;

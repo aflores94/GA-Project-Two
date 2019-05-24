@@ -5,10 +5,9 @@ const router = require('express').Router();
 const passport = require('passport');
 const homeCtrl = require('../controllers/home');
 
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home');
-});
+router.get('/', homeCtrl.home);
 
  // Google OAuth login route
 router.get('/auth/google', passport.authenticate(

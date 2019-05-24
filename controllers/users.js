@@ -1,29 +1,3 @@
 //jshint esversion:6
 
-const Bookshelf = require('../models/bookshelf');
-const Podcast = require('../models/podcast');
-
-function index(req, res, next) {
-    console.log(req.query);
-    // Make the query object to use with User.find based up
-    // the user has submitted the search form or now
-    let modelQuery = req.query.name ? {
-        name: new RegExp(req.query.name, 'i')
-    } : {};
-    // Default to sorting by name
-    let sortKey = req.query.sort || 'name';
-    User.find(modelQuery)
-    .sort(sortKey.exec(function(err, users) {
-        if (err) return next(err); 
-    // Passing search values, name & sortKey, for use in the EJS
-    res.render('users/home', {
-        users,
-        user: req.user,
-        name: req.query.name,
-        sortKey
-     });
-    })
-);
-}
-
-module.exports = index;
+const User = require('../models/user');
