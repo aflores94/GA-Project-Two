@@ -2,27 +2,20 @@
 <html>
   <head>
     <title>The Podcast Bookshelf</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' type="text/css" href='/public/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Home Page</h1>
+    <h1>Welcome to the Podcast Bookshelf</h1>
 
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-  <ul class="right">
-    <li>
+    <nav>
       <% if (user) { %>
-      <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-      <% } else { %>
       <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+      <% } else { %>
+      <a href="/logout"><i class="material-icons left"></i>Log Out</a>
       <% } %>
-    </li>
-  </ul>
-        </div>
       </nav>
-    </div>
 
-      <p>Welcome to the Podcast Bookshelf</p>
+    <footer>Footer</footer>
+
   </body>
 </html>

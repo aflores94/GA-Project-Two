@@ -1,8 +1,43 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
+body {
+  display: grid;
+  width: 100vh; 
+  height: 100vw;
+  justify-content: center;
+  border: 5px solid black; 
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "sidebar main main main"
+    "footer footer footer footer";
 }
+
+button {
+  background-color: red; 
+  border: 2px solid black;
+  border-radius: 10%;
+  margin: 2px;
+}
+
+header {
+  grid-area: header;
+}
+
+#podcasts {
+  grid-area: main;
+}
+
+#profile {
+  grid-area: sidebar;
+}
+
+footer {
+  grid-area: footer;
+}
+

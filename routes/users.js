@@ -3,16 +3,11 @@
 const express = require('express');
 const router = express.Router();
 const homeCtrl = require('../controllers/home');
+const usersCtrl = require('../controllers/users');
 
-//user home page
-router.get("/users", function (req, res) {
-    //view homepage with podcast thumbnails and buttons to view profile bookshelf
-    res.render('user');
-     function isLoggedIn(req, res, next) {
-         if (req.isAuthenticated()) return next();
-         res.redirect('/auth/google');
-     }
-});
+//view homepage with podcast thumbnails and buttons to view profile bookshelf
+router.get("/users", usersCtrl);
+
 
 router.post("/users/:id", function (req, res){ 
     //adds podcast to homepage 

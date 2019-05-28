@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="/public/stylesheets/style.css">
     <title>User Homepage</title>
 </head>
 <body>
-    <h1>This is your homepage</h1>
+
+    <header> 
+        Header
+       <% if (user) { %>
+       <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+       <% } else { %>
+       <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+       <% } %>
+    </header>
+
+    <section id=profile>
+        This is your homepage
+        <br>
+        <button>+</button>
+    </section>
+  
+
+    <section id=podcasts>
+        <div>Podcast</div>
+    </section>
+
+    <footer>Footer</footer>
+
 </body>
 </html>
