@@ -8,8 +8,8 @@ const usersCtrl = require('../controllers/users');
 //view homepage with podcast thumbnails and buttons to view profile bookshelf
 router.get("/users", usersCtrl);
 
-
-router.post("/users/:id", function (req, res){ 
+//  @ POST private 
+router.post("/profile", function (req, res){ 
     //adds podcast to homepage 
      function isLoggedIn(req, res, next) {
          if (req.isAuthenticated()) return next();
@@ -17,7 +17,7 @@ router.post("/users/:id", function (req, res){
      }
 });
 
-router.delete("/users/:id", function (req, res) {
+router.delete("/profile", function (req, res) {
     //delete podcast from homepage (also deletes any related bookshelves)
      function isLoggedIn(req, res, next) {
          if (req.isAuthenticated()) return next();
@@ -26,7 +26,7 @@ router.delete("/users/:id", function (req, res) {
 });
 
 //user profile page 
-router.get("/users/:id/profile", function (req, res) {
+router.get("/profile/settings", function (req, res) {
     //view user profile
      function isLoggedIn(req, res, next) {
          if (req.isAuthenticated()) return next();
@@ -37,7 +37,7 @@ router.get("/users/:id/profile", function (req, res) {
 
 //  router.post('/putformactionhere', isLoggedIn, homeCtrl.'putfunctionhere');
 
-router.delete("/users/:id/profile", function (req, res) {
+router.delete("/users/profile", function (req, res) {
     //delete account
 });
 

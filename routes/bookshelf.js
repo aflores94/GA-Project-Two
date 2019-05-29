@@ -7,7 +7,7 @@ const bookshelvesCtrl = require('../controllers/bookshelves');
 //podcast & bookshelf page 
 //podcast info on the left, bookshelf on the right 
 
-router.get("/user/:userId/podcast-bookshelfs/:bookshelfId", function (req, res) {
+router.get("/user/podcast-bookshelfs/:bookshelfId", function (req, res) {
     //go to podcast bookshelf
     //  function isLoggedIn(req, res, next) {
     //      if (req.isAuthenticated()) return next();

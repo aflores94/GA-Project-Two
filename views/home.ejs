@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>The Podcast Bookshelf</title>
-    <link rel='stylesheet' type="text/css" href='/public/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Welcome to the Podcast Bookshelf</h1>
+<%- include ./partials/header.ejs %>
+<%- include ./partials/footer.ejs %>
 
-    <nav>
-      <% if (user) { %>
-      <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
-      <% } else { %>
-      <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-      <% } %>
-      </nav>
+<h1>Welcome to the Podcast Bookshelf</h1>
 
-    <footer>Footer</footer>
-
-  </body>
-</html>
