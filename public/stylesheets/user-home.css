@@ -17,6 +17,7 @@ body {
 img {
   height: 50px; 
   width: 50px;
+  border-radius: 50%;
 }
 
 button {
@@ -36,12 +37,12 @@ header {
 
 #podcasts {
   grid-area: main;
-  background: lightgray;
+  background: gray;
 }
 
 #profile {
   grid-area: sidebar;
-  background: grey;
+  background: lightgrey;
 }
 
 footer {

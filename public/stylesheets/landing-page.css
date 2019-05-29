@@ -11,26 +11,88 @@ html {
 body {
     min-height: 100%;
     position: relative;
-    padding-bottom: [footer-height]
+    padding-bottom: [footer-height];
+    font-family: 'Roboto Mono', monospace;
 }
 
 h1 {
     text-align: center;
-    margin: 25vh;
+    margin: 30vh auto;
+    
 }
 
 header {
     background: 5px orange;
     padding: 5px;
+    text-align: right;
 }
 
 footer {
+    grid-area: footer;
+    font-size: 10px;
+    text-align: center;
+    color: lightgray;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    height: [footer-height];
-    background: 5px aqua;
+    height: fit-content;
+    background: orange;
     padding: 5px;
-    margin: ;
+}
+
+.blinking-cursor {
+    font-weight: 100;
+    font-size: 40px;
+    color: #2E3D48;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-moz-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-webkit-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-ms-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-o-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
 }
