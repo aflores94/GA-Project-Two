@@ -6,16 +6,17 @@
 
 body {
   display: grid;
-  width: 100vh; 
-  height: 100vw;
-  justify-content: center;
   border: 5px solid black; 
-  grid-template-columns: 50px 50px 50px 50px;
-  grid-template-rows: auto;
   grid-template-areas:
     "header header header header"
     "sidebar main main main"
     "footer footer footer footer";
+  min-height: 100%;
+}
+
+img {
+  height: 50px; 
+  width: 50px;
 }
 
 button {
@@ -27,17 +28,32 @@ button {
 
 header {
   grid-area: header;
+  text-align: right;
+  height: fit-content;
+  padding: 5px;
+  background: orange;
 }
 
 #podcasts {
   grid-area: main;
+  background: lightgray;
 }
 
 #profile {
   grid-area: sidebar;
+  background: grey;
 }
 
 footer {
   grid-area: footer;
+  font-size: 10px;
+  text-align: center;
+  color: lightgray;
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  height: fit-content;
+  background: orange;
+  padding: 5px;
 }
-

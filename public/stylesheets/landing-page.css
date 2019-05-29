@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: [footer-height]
+}
+
+h1 {
+    text-align: center;
+    margin: 25vh;
+}
+
+header {
+    background: 5px orange;
+    padding: 5px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: [footer-height];
+    background: 5px aqua;
+    padding: 5px;
+    margin: ;
+}

@@ -1,6 +1,7 @@
 //jshint esversion:6
 
 const mongoose = require('mongoose');
+// const podcast = require('./podcast');
 
 var Schema = mongoose.Schema;
 
@@ -20,7 +21,8 @@ const userSchema = new Schema({
     name: String,
     // podcasts: [podcastSchema],
     bookshelves: [bookshelfSchema],
-    googleId: String
+    googleId: String,
+    avatar: String
 }, {
     timestamps: true
 });

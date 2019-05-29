@@ -1,16 +1,7 @@
-<%- include header.ejs %>
-<%- include footer.ejs %>
-
-<h3><%= user.name %></h3>
-<div><%+ user.avatar %></div>
-
 <section id=profile>
-    This is your homepage
-    <br>
-    <button onclick="newPodcast()">+</button>
+    <h3> <%= user.name %> </h3>
+    <img src= '<%= user.avatar %>'> 
+    <button onclick="newPodcast()">Add New Podcast</button>
 </section>
 
 
-<section id=podcasts>
-    <div class='podcast' onclick="getBookshelf()">Podcast 1</div>
-</section>
