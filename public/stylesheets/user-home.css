@@ -6,55 +6,116 @@
 
 body {
   display: grid;
-  border: 5px solid black; 
+  grid-template-rows: 5fr 90fr 5fr;
+  grid-template-columns: 20fr 80fr;
   grid-template-areas:
-    "header header header header"
-    "sidebar main main main"
-    "footer footer footer footer";
+    "header header"
+    "sidebar main"
+    "footer footer";
   min-height: 100%;
 }
 
 img {
-  height: 50px; 
-  width: 50px;
+  height: 100px; 
+  width: 100px;
   border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+  border: 3px solid black;
+  margin: 5px;
 }
 
 button {
-  background-color: red; 
-  border: 2px solid black;
+  background-color: #ffac30;
+  font-size: 20px;
+  border: 3px solid black;
   border-radius: 10%;
+  padding: 4px;
   margin: 2px;
+  height: 75px;
+  width: 75px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a {
+  color: #30b0ff;
+  text-decoration-style: double;
+
+}
+
+span {
+  color: #30b0ff;
 }
 
 header {
   grid-area: header;
   text-align: right;
-  height: fit-content;
-  padding: 5px;
-  background: orange;
+  background: #ffac30;
+  font-family: 'Roboto Mono', monospace;
+  padding: 2px;
 }
 
 #podcasts {
   grid-area: main;
-  background: gray;
+  display: flex; 
+  flex-flow: row wrap;
+  padding: 50px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #profile {
   grid-area: sidebar;
-  background: lightgrey;
+  border-right: 3px solid black;
+  display: flex; 
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 3px; 
 }
 
 footer {
   grid-area: footer;
   font-size: 10px;
   text-align: center;
-  color: lightgray;
-  position: absolute;
-  left: 0; 
-  right: 0; 
-  bottom: 0;
-  height: fit-content;
-  background: orange;
-  padding: 5px;
+  color: #ff7830;
+  background: #ffac30;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#search-form {
+  grid-area: main;
+}
+
+#itunes-Search {
+  align-items: center;
+  justify-items: center;
+}
+
+.typewriter h1 {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid transparent;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .05em;
+  /* Adjust as needed */
+  animation:
+    typing 2s steps(30, end),
+    blink-caret .9s step-end 6;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {width: 0}
+  to {width: 100%}
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {border-color: transparent}
+  50% { border-color: #30b0ff }
 }

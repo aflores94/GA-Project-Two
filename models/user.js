@@ -14,12 +14,10 @@ const bookshelfSchema = new Schema({
     read: Boolean,
 });
 
-
-
 //user data
 const userSchema = new Schema({
     name: String,
-    // podcasts: [podcastSchema],
+    podcasts: [],
     bookshelves: [bookshelfSchema],
     googleId: String,
     avatar: String

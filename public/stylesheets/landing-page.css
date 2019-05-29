@@ -21,8 +21,13 @@ h1 {
     
 }
 
+a {
+    text-decoration: none; 
+    color: #30b0ff; 
+}
+
 header {
-    background: 5px orange;
+    background: 5px #ffac30;
     padding: 5px;
     text-align: right;
 }
@@ -37,7 +42,7 @@ footer {
     right: 0;
     bottom: 0;
     height: fit-content;
-    background: orange;
+    background: #ffac30;
     padding: 5px;
 }
 
@@ -57,7 +62,7 @@ footer {
         color: transparent;
     }
     50% {
-        color: black;
+        color: #30b0ff;
     }
 }
 
@@ -66,7 +71,7 @@ footer {
         color: transparent;
     }
     50% {
-        color: black;
+        color: #30b0ff;
     }
 }
 
@@ -75,7 +80,7 @@ footer {
         color: transparent;
     }
     50% {
-        color: black;
+        color: #30b0ff;
     }
 }
 
@@ -84,7 +89,7 @@ footer {
         color: transparent;
     }
     50% {
-        color: black;
+        color: #30b0ff;
     }
 }
 
@@ -93,6 +98,6 @@ footer {
         color: transparent;
     }
     50% {
-        color: black;
+        color: #30b0ff;
     }
 }

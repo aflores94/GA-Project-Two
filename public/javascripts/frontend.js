@@ -2,7 +2,7 @@
 const Bookshelf = require('/models/user');
 
 function newPodcast(){
-    console.log('clicked');
+    let click = false;
 }
 
 function getBookshelf(){
