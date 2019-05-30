@@ -1,6 +1,5 @@
 <section id=podcasts>
     <button id=add onClick="showSearch()">+</button> 
-
     <script>
         function showSearch(){
         window.location = '/users/search';
@@ -8,13 +7,10 @@
     </script>
 
 <% user.podcasts.forEach((podcast, index) => { %>
-    <a href="/users/podcast/bookshelf/:id"><img src="<%= podcast.artworkUrl100 %>" alt=""></a>
-    <button id=delete onClick="deletePodcast()">X</button>
-        <script>
-        function deletePodcast() {
-            user.podcasts.splice(index, 1)
-            }
-        </script>
-<% }) %>
+    <span id=podcastArray>
+        <a href="/users/podcast/bookshelf/<%= podcast.collectionId %>"><img src="<%= podcast.artworkUrl100 %>" alt=""></a>
+        <button id=delete>x</button>
+    </span>
+<% }); %>
 
 </section> 

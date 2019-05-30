@@ -1,21 +1,16 @@
 //jshint esversion:6
-
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const bookshelvesCtrl = require('../controllers/bookshelves');
 
-// router.get("/users/bookshelf/:bookshelfId", bookshelvesCtrl.);
+router.get("/users/podcast/bookshelf/:id", bookshelvesCtrl.showBookshelf);
 
-router.post("/users/bookshelf/:bookshelfId", bookshelvesCtrl);
+router.post("/users/podcast/bookshelf/add", bookshelvesCtrl.createBookshelf);
 
+router.put("/users/podcast/bookshelf/:id", bookshelvesCtrl.updateBookshelf);
 
-router.delete("/users/:userId/podcast-bookshelf/:bookshelfId", function (req, res) {
-    //remove book from bookshelf 
-    //  function isLoggedIn(req, res, next) {
-    //      if (req.isAuthenticated()) return next();
-    //      res.redirect('/auth/google');
-    //  }
-});
+router.delete("/users/podcast/bookshelf/:id", bookshelvesCtrl.deleteBookshelf);
 
 
 module.exports = router;

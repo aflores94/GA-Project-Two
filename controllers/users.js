@@ -7,7 +7,6 @@ const podcastMgr = require('../utils/podcast');
 const User = require('../models/user');
 
 function home(req, res, next) {
-    console.log(req.user);
     res.render('user-home', {
         user: req.user,
         data: null
@@ -15,7 +14,6 @@ function home(req, res, next) {
 }
 
 function showSearch(req, res) {
-    console.log(podcastMgr.bookshelfId);
     res.render('user-search', {
         user: req.user,
         data: null,
@@ -50,7 +48,7 @@ function addNewPodcast(req, res) {
 }
 
 function deletePodcast(req, res) {
-    User.findByIdAndRemove(req.params.podcasts, (err, todo) => {
+    User.findByIdAndRemove(req.params.id, (err, todo) => {
         if (err) return res.status(500).send(err);
         const response = {
             message: "Podcast successfully deleted",

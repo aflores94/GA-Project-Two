@@ -13,7 +13,7 @@ router.get("/users", usersCtrl.home);
 router.get('/users/search', usersCtrl.showSearch);
 router.post('/users/search', usersCtrl.search);
 router.post('/users/podcasts/:idx/add', usersCtrl.addNewPodcast);
-// router.get('/podcasts', usersCtrl.allPodcasts);
+
 
 
 module.exports = router;
