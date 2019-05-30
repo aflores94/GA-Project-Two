@@ -1,9 +1,8 @@
 //jshint esversion:6
 
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 // const podcast = require('./podcast');
-
-var Schema = mongoose.Schema;
 
 // podcast bookshelf data 
 const bookshelfSchema = new Schema({

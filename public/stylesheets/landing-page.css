@@ -11,7 +11,6 @@ html {
 body {
     min-height: 100%;
     position: relative;
-    padding-bottom: [footer-height];
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -22,8 +21,10 @@ h1 {
 }
 
 a {
-    text-decoration: none; 
-    color: #30b0ff; 
+    color: white;
+    text-decoration-style: double;
+    text-decoration-color: black;
+
 }
 
 header {
@@ -36,7 +37,7 @@ footer {
     grid-area: footer;
     font-size: 10px;
     text-align: center;
-    color: lightgray;
+    color: white;
     position: absolute;
     left: 0;
     right: 0;

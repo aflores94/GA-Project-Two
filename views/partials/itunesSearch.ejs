@@ -1,16 +1,17 @@
-<section id='search-form'>
-    <form action="/users" method="POST">
-        <input type="text" name="search" id="iTunes-Search" placeholder="Search for podcasts here">
-        <button type="submit">Search</button>
+<section id=itunes-search>
+
+    <form action="/users/search" method="POST">
+        <input type="text" name="searchTerm">
+        <button>Search</button>
     </form>
-</section>
-<section>
-    <% if(data) {%>
-    <%  data.results.forEach((element, index) => {%>
-    <a href="/podcast/add/<%=index%>">
-        <p><%= element.artistName %></p>
-    </a>
-    <%})%>
-    <%}%>
+    
+    <% if(data) { %>
+    <% data.forEach((element, index) => { %>
+    <p><button onclick="javascript: {document.querySelector('#form').submit()}">Add Podcast</button> <%= element.collectionName %></p>
+    <form id="form" action="/users/podcasts/<%= index %>/add" method="POST">
+        <input type="hidden">
+    </form>
+    <% }) %>
+    <% } %>
 
 </section>

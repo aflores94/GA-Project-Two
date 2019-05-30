@@ -1,9 +1,11 @@
 //jshint esversion:6 
+let results = [];
 
-const results = [];
-
-
-module.exports = {
-    results
+function getPodcast(index) {
+    return results.splice(index, 1)[0];
 }
 
+module.exports = {
+    getPodcast,
+    results
+};
