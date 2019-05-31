@@ -34,26 +34,17 @@ function search(req, res) {
 function addNewPodcast(req, res) {
     const index = parseInt(req.params.idx);
     const selectedPodcast = podcastMgr.getPodcast(index);
-    User.findByIdAndUpdate(req.user._id, {
-        $push: {
-            podcasts: selectedPodcast
-        }
-    }, {
-        new: true
-    }, function (err, response) {
-        console.log(response);
+    User.findByIdAndUpdate(req.user._id, {$push: {podcasts: selectedPodcast}}, {new: true}, function (err, response) {
         res.redirect('/users');
     });
 
 }
 
 function deletePodcast(req, res) {
-    let podcastid = parseInt(req.params.podcastid)
+    let podcastid = parseInt(req.params.podcastid);
     User.findByIdAndUpdate(req.user._id, {$pull: {podcasts: {collectionId: podcastid}
         }
     }, function (err, user) {
-        console.log(err)
-        console.log(user)
         res.redirect(`/users`);
     });
 }
