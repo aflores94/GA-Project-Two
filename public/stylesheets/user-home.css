@@ -113,14 +113,16 @@ footer {
   padding: 9px;
 }
 
-#search-form {
+#search-bar {
   grid-area: main;
+  align-items: center;
+  justify-items: center;
 }
 
 #itunes-search {
   grid-area: main;
-  align-items: center;
-  justify-items: center;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .typewriter h1 {

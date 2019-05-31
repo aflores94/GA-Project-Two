@@ -184,15 +184,20 @@ h1{
 #author, #title {
     grid-area: sidebar;
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
 }
 
+#delete, #update {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: row;
+}
 
 #notes {
     grid-area: main;
 }
 
-#addBook {
+#addBook, #update, #delete {
     background-color: lightgrey;
     color: white;
     font-size: 10px;

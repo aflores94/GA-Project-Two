@@ -15,11 +15,11 @@
      <div id=title><%= element.title %></div>
      <div id=author>by <%= element.author %></div>
      <input id=notes type="text" name="notes" placeholder="<%= element.notes %>">
-     <input type="submit" value="Update">
+     <input type="submit" id="update" value="Update">
     </form>
 
     <form action="/users/podcast/<%= podcast.collectionId %>/bookshelf/<%= element._id %>?_method=DELETE" method="POST">
-    <input type="submit" value="Delete">
+    <input type="submit" id="delete" value="Delete">
     </form>
     <% }) %>
 </div>
