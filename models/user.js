@@ -8,7 +8,7 @@ const bookshelfSchema = new Schema({
     title: String,
     author: String,
     notes: String,
-    read: String,
+    read: Boolean,
 });
 
 //user data

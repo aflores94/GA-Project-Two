@@ -160,6 +160,10 @@ h1{
     margin: 0 auto;
 }
 
+#title{
+    text-align: center;
+}
+
 .book {
     display: flex;
     flex-flow: column wrap;

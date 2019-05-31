@@ -22,17 +22,14 @@ function showBookshelf(req, res){
                 res.render('user-bookshelf', {
                     user: req.user,
                     podcast: result[0].podcasts[0]
-                });
+                }); 
     });
 }
 
 function createBookshelf(req, res) {
-    const newBookshelf = new Bookshelf(req.body);
-    newBookshelf.save(err => {
-        if (err) return res.status(500).send(err);
-        return res.status(200).send(newBookshelf);
-    });
-    res.render('user-bookshelf');
+   User.findByIdAndUpdate(req.user._id, {$push: {bookshelves: req.body}}, {new: true}, function(err, user) { 
+    res.redirect(`/users/podcast/bookshelf/${req.params.id}`);
+   });
 }
 
 function updateBookshelf(req, res){
@@ -46,14 +43,9 @@ function updateBookshelf(req, res){
 }
 
 function deleteBookshelf(req, res) {
-// User.findByIdAndRemove(req.params.bookshelf, (err, user) => {
-//     if (err) return res.status(500).send(err);
-//     const response = {
-//         message: "Bookshelf deleted",
-//         id: bookshelf._id
-//     };
-//     return res.status(200).send(response);
-// });
+    User.findByIdAndUpdate(req.user._id, {$pull: {bookshelves: req.body}}, function (err, user) {
+        res.redirect(`/users/podcast/bookshelf/${req.params.id}`);
+    });
 }
 
 module.exports = {

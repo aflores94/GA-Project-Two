@@ -6,7 +6,7 @@ const bookshelvesCtrl = require('../controllers/bookshelves');
 
 router.get("/users/podcast/bookshelf/:id", bookshelvesCtrl.showBookshelf);
 
-router.post("/users/podcast/bookshelf/add", bookshelvesCtrl.createBookshelf);
+router.post("/users/podcast/bookshelf/:id/add", bookshelvesCtrl.createBookshelf);
 
 router.put("/users/podcast/bookshelf/:id", bookshelvesCtrl.updateBookshelf);
 
