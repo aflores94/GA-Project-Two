@@ -2,7 +2,7 @@
 
 <h1 id=shelfName> <%= podcast.collectionName %> Bookshelf </h1>
 
-<form class="book" action="/users/podcast/bookshelf/<%= podcast.collectionId %>/add" method="POST">
+<form class="book" action="/users/podcast/bookshelf/<%= podcast.collectionId %>" method="POST">
     <input type="text" name ="title" placeholder="Title">
     <input type="text" name="author" placeholder="Author">
     <input type="text" name="notes" placeholder="Notes">

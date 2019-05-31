@@ -8,7 +8,7 @@
     <% if(data) { %>
     <% data.forEach((element, index) => { %>
     <p><button onclick="javascript: {document.querySelector('#form').submit()}">Add Podcast</button> <%= element.collectionName %></p>
-    <form id="form" action="/users/podcasts/<%= index %>/add" method="POST">
+    <form id="form" action="/users/podcasts/<%= index %>" method="POST">
         <input type="hidden">
     </form>
     <% }) %>
