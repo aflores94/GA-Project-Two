@@ -160,7 +160,7 @@ h1{
     margin: 0 auto;
 }
 
-#title{
+#shelfName{
     text-align: center;
 }
 
@@ -170,6 +170,26 @@ h1{
     width: fit-content;
     padding: 0;
     margin: auto; 
+}
+
+#book {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+    grid-template-rows: 100fr;
+    grid-template-areas:
+        "sidebar main";
+    padding: 10px;
+}
+
+#author, #title {
+    grid-area: sidebar;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+
+#notes {
+    grid-area: main;
 }
 
 #addBook {

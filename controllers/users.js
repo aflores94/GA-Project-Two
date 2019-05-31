@@ -48,20 +48,20 @@ function addNewPodcast(req, res) {
 }
 
 function deletePodcast(req, res) {
-    User.findByIdAndRemove(req.params.id, (err, todo) => {
-        if (err) return res.status(500).send(err);
-        const response = {
-            message: "Podcast successfully deleted",
-            id: podcast._id
-        };
-        return res.status(200).send(response);
+    let podcastid = parseInt(req.params.podcastid)
+    User.findByIdAndUpdate(req.user._id, {$pull: {podcasts: {collectionId: podcastid}
+        }
+    }, function (err, user) {
+        console.log(err)
+        console.log(user)
+        res.redirect(`/users`);
     });
 }
-
 
 module.exports = {
     home, 
     search,
     addNewPodcast,
+    deletePodcast,
     showSearch
 };

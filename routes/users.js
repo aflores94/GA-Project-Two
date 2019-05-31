@@ -12,8 +12,8 @@ const podcastMgr = require('../utils/podcast');
 router.get("/users", usersCtrl.home);
 router.get('/users/search', usersCtrl.showSearch);
 router.post('/users/search', usersCtrl.search);
-router.post('/users/podcasts/:idx/add', usersCtrl.addNewPodcast);
-
+router.post('/users/podcasts/:idx', usersCtrl.addNewPodcast);
+router.delete('/users/podcasts/:podcastid', usersCtrl.deletePodcast);
 
 
 module.exports = router;

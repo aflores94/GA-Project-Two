@@ -1,20 +1,26 @@
 <section id=bookForm> 
 
-<h1 id=title> <%= podcast.collectionName %> Bookshelf </h1>
+<h1 id=shelfName> <%= podcast.collectionName %> Bookshelf </h1>
 
 <form class="book" action="/users/podcast/bookshelf/<%= podcast.collectionId %>/add" method="POST">
     <input type="text" name ="title" placeholder="Title">
     <input type="text" name="author" placeholder="Author">
     <input type="text" name="notes" placeholder="Notes">
-    <span id=checkbox>Read?<input type="checkbox" name="read"></span>
     <input type="submit" name="Add Book" id='addBook'>
 </form>
 <br>
 <div id=book>
    <% user.bookshelves.forEach((element, index) => { %>
-    <div><%= element.title %></div>
-    <div><%= element.author %></div>
-    <div><%= element.notes %></div>
+    <form action="/users/podcast/<%= podcast.collectionId %>/bookshelf/<%= element._id %>?_method=PUT" method="POST">
+     <div id=title><%= element.title %></div>
+     <div id=author>by <%= element.author %></div>
+     <input id=notes type="text" name="notes" placeholder="<%= element.notes %>">
+     <input type="submit" value="Update">
+    </form>
+
+    <form action="/users/podcast/<%= podcast.collectionId %>/bookshelf/<%= element._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete">
+    </form>
     <% }) %>
 </div>
 
