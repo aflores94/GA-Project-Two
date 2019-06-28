@@ -13,23 +13,25 @@ body {
     "sidebar main"
     "footer footer";
   min-height: 100%;
+  background-color: white;
 }
 
 img {
   height: 100px; 
   width: 100px;
-  border-radius: 50%;
+  border-radius: 20%;
   align-self: center;
   justify-self: center;
-  border: 3px solid black;
+  border: 3px solid white;
   margin: 5px;
 }
 
 #add {
   background-color: lightgrey;
+  cursor: pointer;
   color: white;
   font-size: 20px;
-  border: 3px solid black;
+  border: 3px solid white;
   border-radius: 10%;
   padding: 4px;
   margin: 1.8rem;
@@ -48,10 +50,10 @@ img {
 
 
 #delete {
-  background-color: #FF7F7F;
+  background-color: #ffac30;
+  cursor: pointer;
   color: white;
   font-size: 10px;
-  border: 2px solid black;
   border-radius: 20%;
   margin: 2px;
   height: 20px;
@@ -60,20 +62,21 @@ img {
 }
 
 a {
-  color: white;
-  text-decoration-style: double;
-  text-decoration-color: black;
+  color: #ffac30;
+  text-decoration-style: single;
+  text-decoration-color: white;
 
 }
 
 span {
-  color: #30b0ff;
+  color: #30acff;
 }
 
 header {
   grid-area: header;
   text-align: right;
-  background: #ffac30;
+  border-bottom: 5px solid #ffac30;
+  /* background-color: #ffac30; */
   font-family: 'Roboto Mono', monospace;
   padding: 2px;
 }
@@ -89,7 +92,6 @@ header {
 
 #profile {
   grid-area: sidebar;
-  background-color: rgba(211, 211, 211, .5);
   color: white;
   display: flex; 
   flex-flow: column wrap;
@@ -97,6 +99,8 @@ header {
   align-content: center;
   font-family: 'Roboto Condensed', sans-serif;
   padding: 3px; 
+  background-color: lightgrey;
+  background-image: linear-gradient(to right, lightgrey, white);
 }
 
 footer {
@@ -108,7 +112,8 @@ footer {
   font-size: 10px;
   text-align: center;
   color: white;
-  background: #ffac30;
+  background: white;
+  border-top: 5px solid #ffac30;
   font-family: 'Roboto Mono', monospace;
   padding: 9px;
 }
@@ -150,5 +155,7 @@ footer {
 /* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to {border-color: transparent}
-  50% { border-color: #30b0ff }
+  50% {
+    border-color: #30acff
+  }
 }

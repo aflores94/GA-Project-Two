@@ -11,8 +11,10 @@
         <a href="/users/podcast/bookshelf/<%= podcast.collectionId %>"><img src="<%= podcast.artworkUrl100 %>"
                 alt=""></a>
         <form action="/users/podcasts/<%= podcast.collectionId %>?_method=DELETE" method="POST">
-            <input id=delete type="submit" value="x">
+           <input id=delete type="submit" value="x">
         </form>
+            </a>
+       
     </span>
      
 <% }); %>
