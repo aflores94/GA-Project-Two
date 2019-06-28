@@ -45,7 +45,7 @@ function deletePodcast(req, res) {
     User.findByIdAndUpdate(req.user._id, {$pull: {podcasts: {collectionId: podcastid}
         }
     }, function (err, user) {
-        res.redirect(`/users`);
+        res.redirect('/users');
     });
 }
 
