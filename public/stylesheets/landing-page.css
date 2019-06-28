@@ -21,30 +21,32 @@ h1 {
 }
 
 a {
-    color: white;
-    text-decoration-style: double;
-    text-decoration-color: black;
-
+    color: #ffac30;
+    text-decoration-style: single;
+    text-decoration-color: #30acff;
 }
 
 header {
-    background: 5px #ffac30;
-    padding: 5px;
+    grid-area: header;
     text-align: right;
+    border-bottom: 5px solid #ffac30;
+    font-family: 'Roboto Mono', monospace;
+    padding: 2px;
 }
 
 footer {
-    grid-area: footer;
-    font-size: 10px;
-    text-align: center;
-    color: white;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    height: fit-content;
-    background: #ffac30;
-    padding: 5px;
+    grid-area: footer;
+    font-size: 10px;
+    text-align: center;
+    color: #30acff;
+    background: white;
+    border-top: 5px solid #ffac30;
+    font-family: 'Roboto Mono', monospace;
+    padding: 9px;
 }
 
 .blinking-cursor {

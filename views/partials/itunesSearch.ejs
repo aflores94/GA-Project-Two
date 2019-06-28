@@ -1,8 +1,8 @@
 <section id=itunes-search>
 
     <form id=search-bar action="/users/search" method="POST">
-        <input type="text" name="searchTerm">
-        <button>Search</button>
+        <input type="text" name="searchTerm" autocomplete="off">
+        <button id=search-button>Add a Podcast</button>
     </form>
     
     <% if(data) { %>

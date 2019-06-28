@@ -64,7 +64,7 @@ img {
 a {
   color: #ffac30;
   text-decoration-style: single;
-  text-decoration-color: white;
+  text-decoration-color: #30acff;
 
 }
 
@@ -111,7 +111,7 @@ footer {
   grid-area: footer;
   font-size: 10px;
   text-align: center;
-  color: white;
+  color: #30acff;
   background: white;
   border-top: 5px solid #ffac30;
   font-family: 'Roboto Mono', monospace;
@@ -122,6 +122,15 @@ footer {
   grid-area: main;
   align-items: center;
   justify-items: center;
+}
+
+#search-button {
+  cursor: pointer;
+  padding: 5px; 
+  border-radius: 20%;
+  color: #30acff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 10px; 
 }
 
 #itunes-search {
